@@ -1,15 +1,19 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1 class="text-4xl font-bold">Awesome in-browser designer</h1>
+  <br><br><br>
+  <div class="container mx-auto">
+    <FabricCanvas />
+  </div>
+  <br><br>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FabricCanvas from './components/FabricCanvas.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    FabricCanvas,
   }
 }
 </script>
@@ -22,5 +26,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.border {
+  border: 2px solid black;
 }
 </style>
