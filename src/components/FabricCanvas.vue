@@ -49,9 +49,12 @@ export default {
     },
 
     removeObject() {
-      // TODO grouped delete
       let selected = canvas.getActiveObject()
-      canvas.remove(selected)
+      if (selected._objects) { 
+        selected._objects.forEach(obj => canvas.remove(obj))
+      } else {
+        canvas.remove(selected)
+      }
     }
   }
 }
