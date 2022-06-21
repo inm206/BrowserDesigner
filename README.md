@@ -1,4 +1,5 @@
-# designer
+# BrowserDesigner
+A simple web based designer using Fabric.js
 
 ## Project setup
 ```
@@ -18,6 +19,11 @@ npm run build
 ### Lints and fixes files
 ```
 npm run lint
+```
+
+### Run unit tests
+```
+npm run test:unit
 ```
 
 ### Customize configuration
