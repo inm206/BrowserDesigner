@@ -11,6 +11,7 @@
     "autoprefixer": "^10.4.7",
     "core-js": "^3.8.3",
     "fabric": "^5.2.1",
+    "fabric-history": "^1.6.0",
     "postcss": "^8.4.14",
     "vue": "^3.2.13"
   },

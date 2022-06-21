@@ -2,12 +2,13 @@
   <canvas ref="canvas" width="400" height="400" class="border"></canvas>
   <br><br>
   <div class="container mx-auto">
-    <CanvasControls @add-square="addSquare" @add-circle="addCircle" @remove="removeObject" />
+    <CanvasControls @add-square="addSquare" @add-circle="addCircle" @remove="removeObject" @send-to-back="sendToBack" @bring-to-front="bringToFront" @export="exportToPng" @undo="undo" @redo="redo" />
   </div>
 </template>
 
 <script>
 import { fabric } from "fabric";
+import 'fabric-history';
 import CanvasControls from './CanvasControls.vue'
 let canvas
 export default {
@@ -55,6 +56,34 @@ export default {
       } else {
         canvas.remove(selected)
       }
+    },
+
+    sendToBack() {
+      let selected = canvas.getActiveObject()
+      canvas.sendToBack(selected)
+      canvas.discardActiveObject()
+    },
+
+    bringToFront() {
+      let selected = canvas.getActiveObject()
+      canvas.bringToFront(selected)
+      canvas.discardActiveObject()
+    },
+
+    exportToPng() {
+      let dataURL = canvas.toDataURL({format: 'png'})
+      const link = document.createElement("a");
+      link.href = dataURL;
+      link.download = "canvas.png";
+      link.click();
+    },
+
+    undo() {
+      canvas.undo();
+    },
+
+    redo() {
+      canvas.redo();
     }
   }
 }
