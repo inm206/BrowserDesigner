@@ -32,12 +32,6 @@ export default {
   mounted() {
     const ref = this.$refs.canvas;
     canvas = new fabric.Canvas(ref);
-    const rect = new fabric.Rect({
-      fill: 'red',
-      width: 20,
-      height: 20
-    });
-    canvas.add(rect);
   },
 
   methods: {
